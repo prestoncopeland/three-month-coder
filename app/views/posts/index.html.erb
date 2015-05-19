@@ -1,65 +1,4 @@
-<!-- ********** SLIDES ********** -->
-      <section id="slides">
-         <ul class="slides-container">
-            <li>
-               <%= image_tag("images/slide-1.jpg") %>
-            </li>
-            <li>
-               <%= image_tag("images/slide-2.jpg") %>
-            </li>
-            <li>
-               <%= image_tag("images/slide-3.jpg") %>
-            </li>
-         </ul>
-         <div id="bannertext">
-            <h1>THREE-MONTH CODER</h1>
-            <hr class="aligncenter">
-            <h3>One man's quest to become a coder.<br> In three months.</h3>
-            <p><button class="btn btn-lg btn-white btn-design">Progress Log</button> <button class="btn btn-lg btn-clear btn-design">Portfolio</button></p>
-         </div>
-         <!-- end:Banner text -->
-         <nav class="slides-navigation">
-            <a href="index.html#" class="next">
-            <i class="ion-ios-arrow-forward"></i>
-            </a>
-            <a href="index.html#" class="prev">
-            <i class="ion-ios-arrow-back"></i>
-            </a>
-         </nav>
-      </section>
-      <!-- END SLIDES SECTION -->
-
-
-<!-- ********** FEATURES ********** -->
-  <div class="container">
-    <div class="row mtb2 centered">
-      <div class="col-md-4 w">
-        <div class="circle-icon">
-          <div class="icon ion-ios7-gear-outline"></div>
-        </div>
-        <h5>Progress Log</h5>
-        <hr class="aligncenter">
-        <p>Here is where I chart, in excruciating detail, what I've been learning and for how long I've been learning it.</p>
-      </div><!--/col-md-4-->
-      <div class="col-md-4 w">
-        <div class="circle-icon">
-          <div class="icon ion-ios7-analytics-outline"></div>
-        </div>
-        <h5>Blog Posts</h5>
-        <hr class="aligncenter">
-        <p>What I'm learning about Ruby, Rails, and programming in general.</p>
-      </div><!--/col-md-4-->
-      <div class="col-md-4 w">
-        <div class="circle-icon">
-          <div class="icon ion-ios7-camera-outline"></div>
-        </div>
-        <h5>Portfolio</h5>
-        <hr class="aligncenter">
-        <p>Screenshots and links to my projects.</p>
-      </div><!--/col-md-4-->
-    </div><!--/row -->
-  </div><!-- /.container -->
-
+<div class="container">
 <h1> Posts </h1>
 
 <ul >
@@ -70,47 +9,8 @@
   <% end %>
 </ul>
 
-<p> <%= link_to "Write a new post", new_post_path %>
+<p> <%= link_to "Write A New Post", new_post_path %>
 </p>
+</div>
 
-<script>
-    //Superslides
-    $('#slides').superslides({
-        slide_easing: 'easeInOutCubic',
-        slide_speed: 800,
-        pagination: true,
-        hashchange: false,
-        scrollable: true,
-        animation: 'fade'
-    });
-
-    // Add swipe option
-
-    $('#slides').hammer().on('swipeleft', function () {
-        $(this).superslides('animate', 'next');
-    });
-
-    $('#slides').hammer().on('swiperight', function () {
-        $(this).superslides('animate', 'prev');
-    });
-    </script>
-
-    <script>
-    // Banner text add parallax efect and fade
-  function EasyPeasyParallax() {
-      scrollPos = $(this).scrollTop();
-      $('#slider').css({
-          'background-position': '50% ' + (-scrollPos / 4) + "px"
-      });
-      $('#bannertext').css({
-          'margin-top': (scrollPos / 4) + "px",
-          'opacity': 1 - (scrollPos / 250)
-      });
-  }
-  $(document).ready(function () {
-      $(window).scroll(function () {
-          EasyPeasyParallax();
-      });
-  });
-    </script>
 

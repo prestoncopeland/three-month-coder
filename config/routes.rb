@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+
+  root 'high_voltage/pages#show', :id => 'index'
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
