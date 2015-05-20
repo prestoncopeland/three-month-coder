@@ -1,6 +1,7 @@
 <div class="container">
+<div class ="boxed">
 <h1> <%= @post.title %> </h1>
-
+</div>
 <p> <%= @post.body %> </p>
 
 <p>
@@ -14,5 +15,11 @@
 <p>
 <%= link_to "List All Posts", posts_path %>
 </p>
+
+
+<h3>Comments (<%= @post.comments.size %>)</h3>
+<%= render partial: 'posts/comment', collection: @post.comments %>
+
+<%= render partial: "comments/form" %>
 
 </div>
