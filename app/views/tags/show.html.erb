@@ -1,0 +1,15 @@
+<div class = "container">
+<h1>Posts Tagged With Tag: <%= @tag.name %> </h1>
+
+<ul>
+  <% @tag.posts.each do |post| %>
+    <li class="boxed"> <%= link_to post.title, post_path(post) %> </li><br>
+    <% end %>
+</ul>
+
+<div class="row">
+<div class="col-md-3"><%= link_to "Delete Tag", tag_path(@tag), method: :delete, data: {confirm: "Do you really want to delete this tag?"} %></div>
+  <div class="col-md-3"><%= link_to "List All Posts", posts_path %></div>
+</div> <!--row-->
+
+</div>

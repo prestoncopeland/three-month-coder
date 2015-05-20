@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Post Tags</h1>
+
+<ul >
+  <% @tags.each do |tag| %>
+    <li class="boxed">
+        <%= link_to tag.name, tag_path(tag) %>
+    </li><br>
+  <% end %>
+</ul>
+
+<div class="row"
+<div class="col-md-3"><%= link_to "List All Posts", posts_path %></div>
+</div>
+</div> <!--container-->

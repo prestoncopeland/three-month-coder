@@ -1,20 +1,24 @@
 <div class="container">
 <div class ="boxed">
 <h1> <%= @post.title %> </h1>
+
+<p> Tags:
+  <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
+</p>
 </div>
+
 <p> <%= @post.body %> </p>
 
 <p>
-  <%= link_to "Edit Post", edit_post_path(@post) %>
-</p>
 
-<p>
-<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Do you really want to delete this post?"} %>
-</p>
-
-<p>
-<%= link_to "List All Posts", posts_path %>
-</p>
+  <div class="row">
+  <div class="col-md-3"><%= link_to "Edit Post", edit_post_path(@post) %></div>
+  <div class="col-md-3"><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Do you really want to delete this post?"} %></div>
+  <div class="col-md-3"><%= link_to "List All Posts", posts_path %></div>
+  <div class="col-md-3"><%= link_to "List All Post Tags", tags_path %></div>
+</div>
 
 
 <h3>Comments (<%= @post.comments.size %>)</h3>
