@@ -1,9 +1,13 @@
 <div class="container">
+
+<div class="boxed">
 <h1> Posts </h1>
+</div>
+<br/><br/>
 
 <ul >
   <% @posts.each do |post| %>
-    <li>
+    <li class="boxed">
         <%= link_to post.title, post_path(post) %>
     </li>
   <% end %>

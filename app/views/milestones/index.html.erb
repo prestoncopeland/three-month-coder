@@ -1,0 +1,39 @@
+<div class="container">
+
+<h1 class="boxed">My Coding Progress</h1>
+
+<p>Below is a table of exactly what I’ve been learning and for how long I’ve been learning it.</p>
+
+<table class="gridtable">
+  <thead>
+    <tr>
+      <th>DATE</th>
+      <th>TIME(S)</th>
+      <th>HOURS</th>
+      <th>ACTIVITIES</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @milestones.each do |milestone| %>
+
+      <tr>
+        <td><%= milestone.date_worked %> </td>
+        <td><%= milestone.time %> </td>
+        <td><%= milestone.hours %> </td>
+        <td><%= milestone.activity %> </td>
+        <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
+        <td><%= link_to 'Destroy', milestone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+
+<p> <%= link_to "Record A New Milestone", new_milestone_path %>
+</p>
+
+</div>

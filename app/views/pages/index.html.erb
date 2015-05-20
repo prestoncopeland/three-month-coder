@@ -11,13 +11,20 @@
                <%= image_tag("slide-c.jpg") %>
             </li>
          </ul>
+
          <div id="bannertext">
             <h1>THREE-MONTH CODER</h1>
             <hr class="aligncenter">
             <h3>One man's quest to become a coder.<br> In three months.</h3>
-            <p><button class="btn btn-lg btn-white btn-design">Progress Log</button> <button class="btn btn-lg btn-clear btn-design">Portfolio</button></p>
+
+            <p>
+              <%= link_to("Progress Log", milestones_path, class: "btn btn-lg btn-white btn-design") %>
+
+              <button class="btn btn-lg btn-clear btn-design">Portfolio</button>
+            </p>
          </div>
          <!-- end:Banner text -->
+
          <nav class="slides-navigation">
             <a href="index.html#" class="next">
             <i class="ion-ios-arrow-forward"></i>
@@ -45,7 +52,7 @@
         <div class="circle-icon">
           <div class="icon ion-ios7-analytics-outline"></div>
         </div>
-        <%= link_to("Blog Posts", posts_path) %>
+        <%= link_to("BLOG POSTS", posts_path, class: "aligncenter index_links")%>
         <hr class="aligncenter">
         <p>What I'm learning about Ruby, Rails, and programming in general.</p>
       </div><!--/col-md-4-->

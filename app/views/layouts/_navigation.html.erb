@@ -12,9 +12,9 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#home" class="smoothScroll">HOME</a></li>
-              <li><a href="#about" class="smoothScroll">ABOUT</a></li>
-              <li><a href="#news" class="smoothScroll">BLOG</a></li>
+              <li class="active"><%= link_to "HOME", page_path('index'), class: "smoothScroll" %></li>
+              <li><%= link_to "ABOUT", page_path('about'), class: "smoothScroll" %> </li>
+              <li><%= link_to("BLOG POSTS", posts_path, class: "smoothScroll") %></li>
               <li><a href="#contact" class="smoothScroll">PORTFOLIO</a></li>
             </ul>
           </div><!--/.nav-collapse -->
