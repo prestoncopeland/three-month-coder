@@ -40,7 +40,7 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:title, :description, :project_url, :github_url)
+    params.require(:portfolio).permit(:title, :description, :project_url, :github_url, :image1)
   end
 
 end

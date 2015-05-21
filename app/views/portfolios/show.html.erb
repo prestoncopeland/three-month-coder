@@ -2,6 +2,8 @@
 
   <h1 class="boxed">Project: <%=@portfolio.title%> </h1>
 
+
+
   <p>Description: <%=@portfolio.description%> </p>
 
   <p>Github URL: <%=@portfolio.github_url%> </p>
@@ -13,5 +15,11 @@
   <div class="col-md-3"><%= link_to "Delete Project", portfolio_path(@portfolio), method: :delete, data: {confirm: "Do you really want to delete this project?"} %></div>
   <div class="col-md-3"><%= link_to "List All Portfolio Projects", portfolios_path %></div>
 </div>
+
+<p>
+    <% if @portfolio.image1.exists? %>
+    <%= image_tag @portfolio.image1.url(:medium) %>
+    <% end %>
+  </p>
 
 </div>

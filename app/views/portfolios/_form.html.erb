@@ -1,4 +1,4 @@
-<%= form_for(@portfolio) do |f| %>
+<%= form_for(@portfolio, html: {multipart: true}) do |f| %>
   <ul>
   <% @portfolio.errors.full_messages.each do |error| %>
     <li><%= error %></li>
@@ -23,6 +23,14 @@
   <p>
     <%= f.label :project_url %><br/>
     <%= f.text_field :project_url %>
+  </p>
+
+  <p>
+    <% if @portfolio.image1.exists? %>
+      <%= image_tag @portfolio.image1.url %> <br/>
+    <% end %>
+    <%= f.label :image1, "Attach image" %> <br/>
+    <%= f.file_field :image1 %>
   </p>
 
   <p>
