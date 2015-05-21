@@ -1,0 +1,23 @@
+<div class="container">
+
+<h1 class="boxed">My Coding Portfolio</h1>
+
+<div class="row centered desc">
+
+<% @portfolios.each_with_index do |portfolio, index| %>
+      <% if(index%2==0) %>
+        </div> <!-- end current row -->
+        <div class="row centered desc"> <!--start new row-->
+      <%end%>
+
+      <div class="col-xs-6">
+        <a target="_blank" href="http://www.landingsumo.com/demos/Theme 03/"><img src="assets/img/b-03.png" class="img-responsive aligncenter" alt=""></a>
+        <h4 class="boxed"><%= portfolio.title %></h4>
+        <p><%= portfolio.description %></p>
+      </div>
+
+<% end %><!--@portfolio.each_with_index-->
+
+</div> <!--close final display row -->
+
+</div><!--/container-->
