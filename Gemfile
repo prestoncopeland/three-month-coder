@@ -26,6 +26,8 @@ gem 'high_voltage', '~> 2.3.0'
 
 gem 'paperclip'
 
+gem 'sorcery'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem 'bootstrap-sass'

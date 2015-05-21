@@ -29,7 +29,7 @@
     <% if @portfolio.image1.exists? %>
       <%= image_tag @portfolio.image1.url %> <br/>
     <% end %>
-    <%= f.label :image1, "Attach image" %> <br/>
+    <%= f.label :image1, "Attach a new image" %> <br/>
     <%= f.file_field :image1 %>
   </p>
 

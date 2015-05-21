@@ -16,8 +16,17 @@
     <div class = "container"><p><%= flash.notice %></p></div>
 
     <%= yield %>
-
   </main>
+
+  <div class="container">
+  <h5>
+  <% if logged_in? %>
+    <%= "Logged in as #{current_user.email}" %>
+  <% else %>
+    Logged out
+  <% end %>
+  </h5>
+  </div>
 
 </body>
 </html>
