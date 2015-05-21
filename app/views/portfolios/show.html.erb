@@ -4,4 +4,14 @@
 
   <p>Description: <%=@portfolio.description%> </p>
 
+  <p>Github URL: <%=@portfolio.github_url%> </p>
+
+  <p>Site URL: <%=@portfolio.project_url%> </p>
+
+<div class="row">
+  <div class="col-md-3"><%= link_to "Edit Project", edit_portfolio_path(@portfolio) %></div>
+  <div class="col-md-3"><%= link_to "Delete Project", portfolio_path(@portfolio), method: :delete, data: {confirm: "Do you really want to delete this project?"} %></div>
+  <div class="col-md-3"><%= link_to "List All Portfolio Projects", portfolios_path %></div>
+</div>
+
 </div>

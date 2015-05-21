@@ -1,0 +1,32 @@
+<%= form_for(@portfolio) do |f| %>
+  <ul>
+  <% @portfolio.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :github_url %><br/>
+    <%= f.text_field :github_url %>
+  </p>
+
+  <p>
+    <%= f.label :project_url %><br/>
+    <%= f.text_field :project_url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>

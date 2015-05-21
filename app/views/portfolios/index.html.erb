@@ -12,12 +12,19 @@
 
       <div class="col-xs-6">
         <a target="_blank" href="http://www.landingsumo.com/demos/Theme 03/"><img src="assets/img/b-03.png" class="img-responsive aligncenter" alt=""></a>
-        <h4 class="boxed"><%= portfolio.title %></h4>
+        <h4 class="boxed"><strong><%= link_to portfolio.title, portfolio_path(portfolio) %></strong></h4>
         <p><%= portfolio.description %></p>
+
+        <p style="text-align:left"><strong>Github URL:</strong> <%=portfolio.github_url unless portfolio.github_url.nil?%> </p>
+
+        <p style="text-align:left"><strong>Site URL:</strong> <%=portfolio.project_url unless portfolio.github_url.nil?%> </p>
       </div>
 
 <% end %><!--@portfolio.each_with_index-->
 
 </div> <!--close final display row -->
+
+<p> <%= link_to "Add A New Portfolio Project", new_portfolio_path %>
+</p>
 
 </div><!--/container-->
