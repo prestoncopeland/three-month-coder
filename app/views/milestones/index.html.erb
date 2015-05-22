@@ -11,8 +11,10 @@
       <th>TIME(S)</th>
       <th>HOURS</th>
       <th>ACTIVITIES</th>
+      <% if logged_in? %>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -24,16 +26,19 @@
         <td><%= milestone.time %> </td>
         <td><%= milestone.hours %> </td>
         <td><%= milestone.activity %> </td>
+        <% if logged_in? %>
         <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
         <td><%= link_to 'Destroy', milestone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
 
     <% end %>
   </tbody>
 </table>
 
-
+<% if logged_in? %>
 <p> <%= link_to "Record A New Milestone", new_milestone_path %>
 </p>
+<% end %>
 
 </div>

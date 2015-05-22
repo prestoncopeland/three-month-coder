@@ -1,6 +1,10 @@
 class CodersController < ApplicationController
   before_action :set_coder, only: [:show, :edit, :update, :destroy]
 
+  before_action :zero_coders_or_authenticated, only: [:new, :create]
+
+  before_action :require_login, except: [:new, :create]
+
   # GET /coders
   # GET /coders.json
   def index
@@ -61,6 +65,7 @@ class CodersController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_coder
@@ -70,5 +75,12 @@ class CodersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def coder_params
       params.require(:coder).permit(:username, :email, :password, :password_confirmation)
+    end
+
+    def zero_coders_or_authenticated
+      unless Coder.count == 0 || current_user
+        redirect_to root_path
+        return false
+      end
     end
 end

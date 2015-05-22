@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :coders
 
+  resources :coder_sessions, only: [:new, :create, :destroy]
+
+  get 'login' => 'coder_sessions#new'
+  get 'logout' => 'coder_sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

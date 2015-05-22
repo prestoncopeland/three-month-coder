@@ -12,8 +12,10 @@
 
 <div class="row">
   <div class="col-md-3"><%= link_to "Go Back To All Portfolio Projects", portfolios_path %></div>
+  <% if logged_in? %>
   <div class="col-md-3"><%= link_to "Edit Project", edit_portfolio_path(@portfolio) %></div>
   <div class="col-md-3"><%= link_to "Delete Project", portfolio_path(@portfolio), method: :delete, data: {confirm: "Do you really want to delete this project?"} %></div>
+  <% end %>
 </div>
 
 <p>

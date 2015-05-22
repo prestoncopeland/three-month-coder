@@ -24,7 +24,9 @@
 
 </div> <!--close final display row -->
 
+<% if logged_in? %>
 <p> <%= link_to "Add A New Portfolio Project", new_portfolio_path %>
 </p>
+<% end %>
 
 </div><!--/container-->
