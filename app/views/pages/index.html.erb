@@ -26,13 +26,20 @@
          <!-- end:Banner text -->
 
          <nav class="slides-navigation">
-            <a href="index.html#" class="next">
+           <!-- <a href="index.html#" class="next">
             <i class="ion-ios-arrow-forward"></i>
-            </a>
-            <a href="index.html#" class="prev">
+            </a> doesn't work for some reason -->
+            <%= link_to page_path("index"), class: "prev" do %>
+              <i class="glyphicon glyphicon-euro"></i>
+              <% end %>
+            <%= link_to page_path("index"), class: "next" do %>
+              <i class="glyphicon glyphicon-euro"></i>
+              <% end %>
+           <!-- <a href="index.html#" class="prev">
             <i class="ion-ios-arrow-back"></i>
-            </a>
+            </a> doesn't work for some reason -->
          </nav>
+
       </section>
       <!-- END SLIDES SECTION -->
 
