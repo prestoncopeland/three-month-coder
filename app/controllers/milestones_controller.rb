@@ -3,6 +3,7 @@ before_action :require_login, except: [:index]
 
   def index
     @milestones = Milestone.all
+    @total_hours = Milestone.all.map{|milestone| milestone.hours}.inject(0: :+)
   end
 
   def new
