@@ -28,5 +28,5 @@ production:
   database: three_month_coder_production
   pool:     5
   username: three_month_coder
-  password:
+  password: Sedulous
   template: template0
