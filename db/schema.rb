@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150521223451) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "coders", force: :cascade do |t|
     t.string   "username",         null: false
     t.string   "email",            null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150521223451) do
     t.datetime "updated_at"
   end
 
-  add_index "coders", ["email"], name: "index_coders_on_email", unique: true
+  add_index "coders", ["email"], name: "index_coders_on_email", unique: true, using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.string   "author_name"
@@ -68,8 +71,8 @@ ActiveRecord::Schema.define(version: 20150521223451) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -77,4 +80,6 @@ ActiveRecord::Schema.define(version: 20150521223451) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "taggings", "posts"
+  add_foreign_key "taggings", "tags"
 end
