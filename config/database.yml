@@ -28,5 +28,5 @@ production:
   database: three_month_coder_production
   pool:     5
   username: three_month_coder
-  password:
+  password: <%= ENV['THREE_MONTH_CODER_PRODUCTION_DATABASE_PASSWORD'] %>
   template: template0
