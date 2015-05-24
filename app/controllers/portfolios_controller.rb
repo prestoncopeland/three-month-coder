@@ -27,7 +27,7 @@ before_action :require_login, except: [:index, :show]
   def update
     @portfolio = Portfolio.find(params[:id])
     @portfolio.update(portfolio_params)
-    flash.notice = "Portfolio project '#{@portfolio.title}' updated"
+    flash.notice = "Portfolio project '#{@portfolio.title}' updated!"
     redirect_to portfolio_path(@portfolio)
   end
 
@@ -41,7 +41,8 @@ before_action :require_login, except: [:index, :show]
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:title, :description, :project_url, :github_url, :image1)
+    params.require(:portfolio).permit(:title, :description, :project_url, :github_url,
+      :image1)
   end
 
 end
