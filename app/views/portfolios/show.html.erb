@@ -2,8 +2,6 @@
 
   <h1 class="boxed">Project: <%=@portfolio.title%> </h1>
 
-
-
   <p>Description: <%=@portfolio.description%> </p>
 
   <p>Github URL: <%=@portfolio.github_url%> </p>
@@ -19,9 +17,9 @@
 </div>
 
 <p>
-    <!-- <% if @portfolio.image1.exists? %> -->
+    <% if @portfolio.image1.exists? %>
     <%= image_tag @portfolio.image1.url(:medium) %>
-    <!-- <% end %> -->
-  </p>
+     <% end %>
+</p>
 
 </div>
