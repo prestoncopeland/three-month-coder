@@ -14,13 +14,14 @@
         <h4 class="boxed"><strong><%= link_to portfolio.title, portfolio_path(portfolio) %></strong></h4>
 
         <% if portfolio.image1.exists? %>
-        <%= image_tag(portfolio.image1.url(:thumb), :class => "img-responsive aligncenter") %>
+        <%= link_to image_tag(portfolio.image1.url(:thumb), :class => "img-responsive aligncenter", :alt => "portfolio image"), portfolio_path(portfolio) %>
         <% end %>
+
         <p><%= portfolio.description %></p>
 
-        <p style="text-align:left"><strong>Github URL:</strong> <%=portfolio.github_url unless portfolio.github_url.nil?%> </p>
+        <p style="text-align:left"><strong>Github URL:</strong> <%= link_to(portfolio.github_url,portfolio.github_url,:target=>"_blank") unless portfolio.github_url.nil?%> </p>
 
-        <p style="text-align:left"><strong>Site URL:</strong> <%=portfolio.project_url unless portfolio.github_url.nil?%> </p>
+        <p style="text-align:left"><strong>Site URL:</strong> <%= link_to(portfolio.project_url,portfolio.project_url,:target=>"_blank") unless portfolio.github_url.nil?%> </p>
       </div>
 
 <% end %><!--@portfolio.each_with_index-->
