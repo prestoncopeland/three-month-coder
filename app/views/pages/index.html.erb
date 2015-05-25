@@ -52,7 +52,7 @@
         <div class="circle-icon">
           <div class="icon ion-ios7-gear-outline"></div>
         </div>
-        <h5>Progress Log</h5>
+        <%= link_to("Progress Log", milestones_path, :class => "index_links") %>
         <hr class="aligncenter">
         <p>Here is where I chart, in excruciating detail, what I've been learning and for how long I've been learning it.</p>
       </div><!--/col-md-4-->
@@ -61,7 +61,7 @@
         <div class="circle-icon" >
          <div class="icon ion-ios7-analytics-outline"></div>
         </div>
-        <h5>Blog Posts</h5>
+        <%= link_to("Blog Posts", posts_path, :class => "index_links") %>
         <hr class="aligncenter">
         <p>What I'm learning about Ruby, Rails, and programming in general.</p>
       </div><!--/col-md-4-->
@@ -72,7 +72,7 @@
         <div class="circle-icon">
           <div class="icon ion-ios7-camera-outline"></div>
         </div>
-        <h5>Portfolio</h5>
+        <%= link_to("Portfolio", portfolios_path, :class => "index_links") %>
         <hr class="aligncenter">
         <p>Screenshots and links to my projects.</p>
       </div><!--/col-md-4-->
