@@ -14,7 +14,7 @@
         <h4 class="boxed"><strong><%= link_to portfolio.title, portfolio_path(portfolio) %></strong></h4>
 
         <% if portfolio.image1.exists? %>
-        <%= link_to image_tag(portfolio.image1.url(:thumb), :class => "img-responsive aligncenter", :alt => "portfolio image"), portfolio_path(portfolio) %>
+        <%= link_to image_tag(portfolio.image1.url(:thumb), :class => "img-responsive aligncenter spinicon", :alt => "portfolio image"), portfolio_path(portfolio) %>
         <% end %>
 
         <p><%= portfolio.description %></p>

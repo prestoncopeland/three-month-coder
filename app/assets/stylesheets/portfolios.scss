@@ -3,3 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+a:hover img.spinicon{
+transition: all 30s ease;
+transform:rotate(2000deg);
+-webkit-transform:rotate(2000deg);
+
+}
+
