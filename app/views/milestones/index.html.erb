@@ -9,6 +9,7 @@
 <table class="gridtable">
   <thead>
     <tr>
+      <th>DAY</th>
       <th>DATE</th>
       <th>TIME(S)</th>
       <th>HOURS</th>
@@ -24,6 +25,7 @@
     <% @milestones.each do |milestone| %>
 
       <tr>
+        <td><%= milestone.date_worked.strftime('%a') %> </td>
         <td><%= milestone.date_worked %> </td>
         <td><%= milestone.time %> </td>
         <td><%= milestone.hours %> </td>
