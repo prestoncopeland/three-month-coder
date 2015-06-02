@@ -1,7 +1,13 @@
 class Post < ActiveRecord::Base
+   include ActionView::Helpers::TextHelper
+
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
+
+  def get_body
+    simple_format(self.body)
+  end
 
   def tag_list
     tags.join(", ")
