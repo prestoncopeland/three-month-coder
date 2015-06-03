@@ -4,11 +4,10 @@
         <div class="col-md-6 col-md-offset-3 centered">
           <h5>A Ruby-on-Rails site<br/></h5>
           <br/>
-          <h5>Preston Copeland | 2015</h5>
-            <%= mail_to("copelandps1@gmail.com") do %>
-              <i class="glyphicon glyphicon-envelope" style="font-size: 100px;"></i>
-              <% end -%>
-              <h5>Drop Me A Line!</h5>
+          <h5>Preston Copeland | 2015</h5><br>
+          <%= mail_to "copelandps1@gmail.com" do %>
+  <strong>Email Me</strong>
+<% end %>
         </div>
       </div>
     </div>
