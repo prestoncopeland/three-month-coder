@@ -25,12 +25,18 @@
   <div class="col-md-3"><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Do you really want to delete this post?"} %></div>
   <% end %>
 </div>
+<br><br>
+<div class="row">
+  <!--Disqus Comments -->
+  <%= render partial: 'disqus/thread' %>
+</div>
 
 
-<h3>Comments (<%= @post.comments.size %>)</h3>
+<!-- <h3>Comments (<%= @post.comments.size %>)</h3>
 <%= render partial: 'posts/comment', collection: @post.comments %>
 
 <div style="text-align:center">
 <%= render partial: "comments/form" %>
 </div>
-</div>
+</div> -->
+
