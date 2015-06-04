@@ -27,16 +27,12 @@
 </div>
 <br><br>
 <div class="row">
+
   <!--Disqus Comments -->
-  <%= render partial: 'disqus/thread' %>
+<%= render partial: "disqus/thread", locals: {post: @post} %>
+
 </div>
 
 
-<!-- <h3>Comments (<%= @post.comments.size %>)</h3>
-<%= render partial: 'posts/comment', collection: @post.comments %>
 
-<div style="text-align:center">
-<%= render partial: "comments/form" %>
-</div>
-</div> -->
 

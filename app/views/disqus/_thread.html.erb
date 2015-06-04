@@ -2,8 +2,8 @@
 <script type="text/javascript">
 
   var disqus_shortname = 'threemonthcoder';
-    var disqus_identifier = '<%=@post.id%>';
-    var disqus_url = '<%=url_for(@post)%>';
+    var disqus_identifier = '<%= post.id -%>';
+    var disqus_url = '<%= request.fullpath.split("?")[0] -%>';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
