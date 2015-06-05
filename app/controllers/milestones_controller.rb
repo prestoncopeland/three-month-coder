@@ -2,7 +2,7 @@ class MilestonesController < ApplicationController
 before_action :require_login, except: [:index]
 
   def index
-    @milestones = Milestone.all
+    @milestones = Milestone.all.order(:created_at)
     @total_hours = Milestone.all.map do |milestone| milestone.hours
     end.inject(:+)
   end
