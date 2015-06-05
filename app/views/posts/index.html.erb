@@ -23,7 +23,7 @@
                 <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
             </p>
-            <% if post.date_written.exists? %>
+            <% unless post.date_written.nil? %>
             <p class="blog-post-meta"><em><%=post.date_written.strftime('%B %-d, %Y')%>, by <%=post.author%></em>
             </p>
             <% end %>
