@@ -27,7 +27,7 @@
             <p class="blog-post-meta"><em><%=post.date_written.strftime('%B %-d, %Y')%>, by <%=post.author%></em>
             </p>
             <% end %>
-            <p><%= truncate(post.body, length: 3000, separator: ' ')%> <%=link_to 'Continue reading ...', post_path(post)%>
+            <p><%= truncate(post.body, length: 500, separator: ' ')%> <%=link_to 'Continue reading ...', post_path(post)%>
             </p>
           </div> <!-- blog post -->
           <% end %>
