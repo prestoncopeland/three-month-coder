@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 before_action :require_login, except: [:index, :show]
 
   def index
-    @posts = Post.all.order(:created_at)
+    @posts = Post.all.order(date_written: :desc)
   end
 
   def show
@@ -43,7 +43,7 @@ before_action :require_login, except: [:index, :show]
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :tag_list)
+    params.require(:post).permit(:title, :body, :tag_list, :date_written, :author)
   end
 
 end

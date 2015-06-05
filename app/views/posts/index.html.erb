@@ -1,44 +1,61 @@
 <div class="container">
 
 <div>
-<h1 class="boxed"> Thoughts About Ruby, Rails, Computer Science, And ... Life</h1>
+  <h1 class="boxed"> Three-Month Coder Blog</h1>
 </div>
+
 <br/><br/>
 
-<p>Here are some blog posts charting my coding journey.</p>
+<div class="row">
 
-<table class="gridtable">
-  <thead>
-    <tr>
-      <th>TITLE</th>
-      <th>DATE WRITTEN</th>
-      <% if logged_in? %>
-      <th></th>
-      <th></th>
-      <% end %>
-    </tr>
-  </thead>
+        <div class="col-sm-8 blog-main">
+          <% if logged_in? %>
+              <p> <%= link_to "Write A New Post", new_post_path %>
+              </p>
+          <% end %>
 
-  <tbody>
-    <% @posts.each do |post| %>
+        <% @posts.each do |post| %>
+          <div class="blog-post">
+            <h2 class="blog-post-title"><strong><%=post.title%></strong></h2>
 
-      <tr>
-        <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= post.created_at.strftime("%B %d, %Y") %> </td>
-        <% if logged_in? %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+            <p><% if logged_in? %>
+                <%= link_to 'Edit', edit_post_path(post) %> |
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+            </p>
 
-    <% end %>
-  </tbody>
-</table>
+            <p class="blog-post-meta"><em><%=post.date_written.strftime('%B %-d, %Y')%>, by <%=post.author%></em>
+            </p>
+
+            <p><%= truncate(post.body, length: 3000, separator: ' ')%> <%=link_to 'Continue reading ...', post_path(post)%>
+            </p>
+          </div> <!-- blog post -->
+          <% end %>
+      </div> <!-- col-sm-8 blog-main -->
+
+      <!-- start sidebar section -->
+      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4><strong>About These Posts</strong></h4>
+            <p>These posts represent thoughts, techniques, and analysis of Ruby, Rails, programming, and life in general.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4><strong>List of All Posts</strong></h4>
+            <ol class="list-unstyled">
+              <% @posts.each do |post| %>
+                <li><%= link_to post.title, post_path(post) %></li>
+              <% end %>
+            </ol>
+          </div>
+        </div><!-- end col-sm-3 and sidebar section-->
+
+</div> <!-- row -->
 
 <% if logged_in? %>
 <p> <%= link_to "Write A New Post", new_post_path %>
 </p>
 <% end %>
-</div>
+
+</div> <!-- end container -->
 
 

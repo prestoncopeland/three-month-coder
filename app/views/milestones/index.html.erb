@@ -2,7 +2,7 @@
 
 <h1 class="boxed">My Coding Progress</h1>
 
-<p>Total hours so far: <%= @total_hours %> </p>
+<p>Total hours so far: <strong><%= @total_hours %></strong> </p>
 
 <p>Below is a table of exactly what I’ve been learning and for how long I’ve been learning it.</p>
 
@@ -26,7 +26,8 @@
 
       <tr>
         <td><%= milestone.date_worked.strftime('%a') %> </td>
-        <td><%= milestone.date_worked %> </td>
+        <!-- the +0 below is to remove padding zero for the day because Mac doesn't support the %-d method-->
+        <td><%= milestone.date_worked.strftime('%-m-%-d-%Y') %> </td>
         <td><%= milestone.time %> </td>
         <td><%= milestone.hours %> </td>
         <td><%= milestone.activity %> </td>

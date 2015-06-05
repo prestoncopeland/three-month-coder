@@ -1,13 +1,17 @@
 <div class="container">
+
 <div class="boxed">
 <h1 style = "text-align: center"> <%= @post.title %> </h1>
 
-<p> Tags:
+<p>By: <%= @post.author %><br/>
+Date: <%= @post.date_written.strftime('%B %-d, %Y') %><br/>
+Tags:
   <% @post.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
     <% end %>
 </p>
 </div>
+
 <br/>
 
 <!--used simple_format text helper to format output -->
