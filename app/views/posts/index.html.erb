@@ -24,7 +24,10 @@
                 <% end %>
             </p>
             <% unless post.date_written.nil? %>
-            <p class="blog-post-meta"><em><%=post.date_written.strftime('%B %-d, %Y')%>, by <%=post.author%></em>
+            <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"> </span><%= post.date_written.strftime('%B %-d, %Y') %> | <span class="glyphicon glyphicon-pencil"> </span><%= post.author %> | <span class="glyphicon glyphicon-tags"></span> &nbsp;Related Articles:
+            <% post.tags.each do |tag| %>
+              <%= link_to tag.name, tag_path(tag) %>
+              <% end %>
             </p>
             <% end %>
             <p><%= truncate(post.body, length: 500, separator: ' ')%> <%=link_to 'Continue reading ...', post_path(post)%>

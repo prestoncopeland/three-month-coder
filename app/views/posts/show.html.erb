@@ -3,9 +3,7 @@
 <div class="boxed">
 <h1 style = "text-align: center"> <%= @post.title %> </h1>
 
-<p>By: <%= @post.author %><br/>
-Date: <%= @post.date_written.strftime('%B %-d, %Y') %><br/>
-Tags:
+<p><span class="glyphicon glyphicon-calendar"> </span><%= @post.date_written.strftime('%B %-d, %Y') %> | <span class="glyphicon glyphicon-pencil"> </span><%= @post.author %> | <span class="glyphicon glyphicon-tags"></span> &nbsp;Related Articles:
   <% @post.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
     <% end %>
@@ -23,7 +21,7 @@ Tags:
 
 <div class="row">
   <div class="col-md-3"><%= link_to "List All Posts", posts_path %></div>
-  <div class="col-md-3"><%= link_to "List All Post Tags", tags_path %></div>
+  <div class="col-md-3"><%= link_to "List All Post Categories", tags_path %></div>
   <% if logged_in? %>
   <div class="col-md-3"><%= link_to "Edit Post", edit_post_path(@post) %></div>
   <div class="col-md-3"><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Do you really want to delete this post?"} %></div>
