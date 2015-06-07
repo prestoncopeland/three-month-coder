@@ -6,6 +6,11 @@
 
 <p>Below is a table of exactly what I’ve been learning and for how long I’ve been learning it.</p>
 
+<% if logged_in? %>
+<p> <%= link_to "Record A New Milestone", new_milestone_path %>
+</p>
+<% end %>
+
 <table class="gridtable">
   <thead>
     <tr>
@@ -41,9 +46,6 @@
   </tbody>
 </table>
 
-<% if logged_in? %>
-<p> <%= link_to "Record A New Milestone", new_milestone_path %>
-</p>
-<% end %>
+
 
 </div>
