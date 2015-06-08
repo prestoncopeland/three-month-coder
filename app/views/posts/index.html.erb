@@ -16,7 +16,7 @@
 
         <% @posts.each do |post| %>
           <div class="blog-post">
-            <h2 class="blog-post-title"><strong><%=post.title%></strong></h2>
+            <h2 class="blog-post-title"><strong><%= link_to post.title, post%></strong></h2>
 
             <p><% if logged_in? %>
                 <%= link_to 'Edit', edit_post_path(post) %> |
@@ -44,11 +44,11 @@
           </div>
           <div class="sidebar-module">
             <h4><strong>List of All Posts</strong></h4>
-            <ol class="list-unstyled">
+            <ul class="list">
               <% @posts.each do |post| %>
                 <li><%= link_to post.title, post_path(post) %></li>
               <% end %>
-            </ol>
+            </ul>
           </div>
         </div><!-- end col-sm-3 and sidebar section-->
 
