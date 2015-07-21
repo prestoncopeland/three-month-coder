@@ -1,3 +1,5 @@
 == README
 
 This site represents my portfolio/blog. Technical highlights: uses Sorcery gem for authentication (not Devise?! I know, how rebellious), uses AWS-sdk gem for uploading portfolio photos, integrates Disqus for comments, and represents the first time I integrated a third-party template to make a responsive website (Bootstrap Landing Sumo). Also, I rolled the blog layout myself, which was a learning experience.
+
+You can check it out at threemonthcoder.com.
