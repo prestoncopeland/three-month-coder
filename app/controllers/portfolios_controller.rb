@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
 before_action :require_login, except: [:index, :show]
 
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.all.order(created_at: :desc)
   end
 
   def show
